@@ -13,13 +13,12 @@ import { AuthModule } from './auth/auth.module';
       type: 'postgres',
       host: 'dpg-d4ml5ma4d50c73eop9p0-a',      // Render host
       port: 5432,
-      username: 'staycation_db_9qyz_user',     // Render user
-      password: '8jpPGoG4tjv3XYF1UjLxmvcOqJFgezuD',          // paste your password
-      database: 'staycation_db_9qyz',          // Render DB name
+      username: 'staycation_db_9qyz_user',     
+      password: '8jpPGoG4tjv3XYF1UjLxmvcOqJFgezuD',          
+      database: 'staycation_db_9qyz',          
       autoLoadEntities: true,
       synchronize: true,
 
-      // ⭐ Required for Render PostgreSQL
       ssl: {
         rejectUnauthorized: false,
       },
