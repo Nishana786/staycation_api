@@ -7,23 +7,30 @@ import { BookingsModule } from './bookings/bookings.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 
-
-
-
-
 @Module({
-  imports: [ TypeOrmModule.forRoot({
+  imports: [
+    TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'dpg-d4ml5ma4d50c73eop9p0-a',      // Render host
       port: 5432,
-      username: 'Home_user',
-      password: 'home123', 
-      database: 'Home_booking_db',
+      username: 'staycation_db_9qyz_user',     // Render user
+      password: '8jpPGoG4tjv3XYF1UjLxmvcOqJFgezuD',          // paste your password
+      database: 'staycation_db_9qyz',          // Render DB name
       autoLoadEntities: true,
       synchronize: true,
+
+      // ⭐ Required for Render PostgreSQL
+      ssl: {
+        rejectUnauthorized: false,
+      },
     }),
-    
-    UsersModule, PropertiesModule, BookingsModule, AuthModule],
+
+    UsersModule,
+    PropertiesModule,
+    BookingsModule,
+    AuthModule,
+  ],
+
   controllers: [AppController],
   providers: [AppService],
 })
